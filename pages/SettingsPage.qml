@@ -97,26 +97,26 @@ SwipeViewPage {
 			}
 
 
-                        SettingsListNavigation {
-                                //% "Debug & Develop"
-                                text: qsTrId("PV Efficiency (Pyranometer)")
-                                //% "Profiling tools, debug statistics, app version..."
-                                secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
-                                pageSource: "/pages/settings/PyranometerPage.qml"
-                                iconSource: "qrc:/images/icon_debug_32.png"
-                                showAccessLevel: VenusOS.User_AccessType_SuperUser
-                        }
- 
-                        SettingsListNavigation {
-                                //% "Debug & Develop"
-                                text: qsTrId("PV Overview (Compact)")
-                                //% "Profiling tools, debug statistics, app version..."
-                                //% secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
-                                pageSource: "/pages/settings/PyranometerCompactPage.qml"
-                                iconSource: "qrc:/images/icon_debug_32.png"
-                                showAccessLevel: VenusOS.User_AccessType_SuperUser
-                        }
- 
+			SettingsListNavigation {
+					//% "Debug & Develop"
+					text: qsTrId("PV Efficiency (Pyranometer)")
+					//% "Profiling tools, debug statistics, app version..."
+					//% secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
+					pageSource: "/pages/settings/PyranometerPage.qml"
+					iconSource: "qrc:/images/icon_debug_32.png"
+					showAccessLevel: VenusOS.User_AccessType_SuperUser
+			}
+
+//			SettingsListNavigation {
+//					//% "Debug & Develop"
+//					text: qsTrId("PV Overview (Compact)")
+//					//% "Profiling tools, debug statistics, app version..."
+//					//% secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
+//					pageSource: "/pages/settings/PyranometerCompactPage.qml"
+//					iconSource: "qrc:/images/icon_debug_32.png"
+//					showAccessLevel: VenusOS.User_AccessType_SuperUser
+//			}
+
 
 		}
 	}
