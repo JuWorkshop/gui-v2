@@ -149,9 +149,8 @@ DevicePage {
 
 		ListNavigation {
 			id: pyranometerMenu
-					text: qsTrId("PV Overview (Compact)")
-					//% secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
-					onClicked: Global.pageManager.pushPage("/pages/settings/devicelist/PyranometerCompactPage.qml", {
+			text: qsTrId("PV Overview (Compact)")
+			onClicked: Global.pageManager.pushPage("/pages/settings/devicelist/PyranometerCompactPage.qml", {
 				title: qsTrId("PV Overview (Compact)"),
 				meteoSettingsPrefix: root.settingsPrefix
 			})
