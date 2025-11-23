@@ -62,29 +62,53 @@ DevicePage {
 			precision: 1
 		}
 
-		ListQuantityGroup {
-			text: "String 1:"
-			model: QuantityObjectModel {
-				QuantityObject { object: theoreticaltoday; VenusOS.Units_Watt }
-				QuantityObject { object: today; VenusOS.Units_Watt }
-				QuantityObject { object: efficiency; VenusOS.Units_Watt }
-			}
-
-			VeQuickItem {
-				id: theoreticaltoday
-				uid: bindPrefix + "/PV/String1/TheoreticalYieldToday"
-			}
-
-			VeQuickItem {
-				id: today
-				uid: bindPrefix + "/PV/String1/YieldToday"
-			}
-
-			VeQuickItem {
-				id: efficiency
-				uid: bindPrefix + "/PV/String1/DailyEfficiency"
-			}
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String1/TheoreticalYieldToday"
+			//% "String 1/TheoreticalYieldToday"
+			text: "String 1 TheoreticalYieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
 		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String2/TheoreticalYieldToday"
+			//% "String 2/TheoreticalYieldToday"
+			text: "String 2 TheoreticalYieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String3/TheoreticalYieldToday"
+			//% "String 3/TheoreticalYieldToday"
+			text: "String 3 TheoreticalYieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+//		ListQuantityGroup {
+//			text: "String 1:"
+//			model: QuantityObjectModel {
+//				QuantityObject { object: theoreticaltoday; VenusOS.Units_Watt }
+//				QuantityObject { object: today; VenusOS.Units_Watt }
+//				QuantityObject { object: efficiency; VenusOS.Units_Watt }
+//			}
+//
+//			VeQuickItem {
+//				id: theoreticaltoday
+//				uid: bindPrefix + "/PV/String1/TheoreticalYieldToday"
+//			}
+//
+//			VeQuickItem {
+//				id: today
+//				uid: bindPrefix + "/PV/String1/YieldToday"
+//			}
+//
+//			VeQuickItem {
+//				id: efficiency
+//				uid: bindPrefix + "/PV/String1/DailyEfficiency"
+//			}
+//		}
 
 
 		ListItem {
