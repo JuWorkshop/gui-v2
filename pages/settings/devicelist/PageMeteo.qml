@@ -62,7 +62,6 @@ DevicePage {
 			precision: 1
 		}
 
-
 		ListQuantityGroup {
 			text: "String 1:"
 			model: QuantityObjectModel {
