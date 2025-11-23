@@ -115,7 +115,7 @@ DevicePage {
 			//% "String2/WhPerWc"
 			text: "String2 Wh/Wc"
 			preferredVisible: dataItem.valid
-			precision: 1
+			precision: 2
 		}
 
 		ListQuantity {
@@ -123,7 +123,31 @@ DevicePage {
 			//% "String3/WhPerWc"
 			text: "String3 Wh/Wc"
 			preferredVisible: dataItem.valid
-			precision: 1
+			precision: 2
+		}
+
+		ListQuantityGroup {
+			text: "String 1:"
+			model: QuantityObjectModel {
+				QuantityObject { object: theoreticaltoday; unit: VenusOS.Units_Volt_DC }
+				QuantityObject { object: today; unit: VenusOS.Units_Amp }
+				QuantityObject { object: efficiency; unit: VenusOS.Units_Watt }
+			}
+
+			VeQuickItem {
+				id: theoreticaltoday
+				uid: bindPrefix + "PV/String1/TheoreticalYieldToday"
+			}
+
+			VeQuickItem {
+				id: today
+				uid: bindPrefix + "PV/String1/YieldToday"
+			}
+
+			VeQuickItem {
+				id: efficiency
+				uid: bindPrefix + "PV/String1/DailyEfficiency"
+			}
 		}
 
 		ListItem {
