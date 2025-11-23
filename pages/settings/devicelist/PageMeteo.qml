@@ -1,6 +1,7 @@
 /*
 ** Copyright (C) 2023 Victron Energy B.V.
 ** See LICENSE.txt for license information.
+**  nano /opt/victronenergy/gui-v2/Victron/VenusOS/pages/settings/devicelist/PageMeteo.qml
 */
 
 import QtQuick
@@ -76,9 +77,9 @@ DevicePage {
 
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/InstallationPower"
-			//% "Estimated power"
-			text: qsTrId("page_meteo_estimated_power")
-			preferredVisible: dataItem.valid
+			//% "Installation Power"
+			text: qsTrId("page_meteo_installation_power")
+//			preferredVisible: dataItem.valid
 			unit: VenusOS.Units_Watt
 			precision: 1
 		}
@@ -92,6 +93,48 @@ DevicePage {
 			precision: 1
 		}
 
+		ListItem {
+			id: sensorBattery
+
+			//% "Sensor battery"
+			text: qsTrId("page_meteo_battery_voltage")
+			preferredVisible: batteryVoltage.valid
+
+			content.children: [
+				QuantityLabel {
+					id: batteryVoltageLabel
+					anchors.verticalCenter: parent.verticalCenter
+					font.pixelSize: Theme.font_size_body2
+					value: batteryVoltage.value === undefined ? NaN : batteryVoltage.value
+					unit: VenusOS.Units_Volt_DC
+					VeQuickItem {
+						id: batteryVoltage
+						uid: bindPrefix + "/BatteryVoltage"
+					}
+				},
+				Label {
+					anchors.verticalCenter: parent.verticalCenter
+					text: {
+						if (lowBattery.valid) {
+							const low = lowBattery.value === 1
+							//% "Low"
+							return low ? qsTrId("meteo_sensor_battery_status_low") : CommonWords.ok
+						} else {
+							return ""
+						}
+					}
+					color: lowBattery.value === 1 ? Theme.color_red : Theme.color_green
+					font.pixelSize: Theme.font_size_body2
+					verticalAlignment: Text.AlignVCenter
+
+					VeQuickItem {
+						id: lowBattery
+						uid:  bindPrefix + "/Alarms/LowBattery"
+					}
+				}
+			]
+		}
+
 		ListNavigation {
 			id: settingsMenu
 
@@ -100,7 +143,25 @@ DevicePage {
 				title: CommonWords.settings,
 				meteoSettingsPrefix: root.settingsPrefix
 			})
-			preferredVisible: root.device.productId === ProductInfo.ProductId_MeteoSensor_Imt
+//			preferredVisible: root.device.productId === ProductInfo.ProductId_MeteoSensor_Imt
 		}
+
+
+		ListNavigation {
+			id: pyranometerMenu
+					text: qsTrId("PV Overview (Compact)")
+					//% secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
+					onClicked: Global.pageManager.pushPage("/pages/settings/devicelist/PyranometerCompactPage.qml", {
+				title: qsTrId("PV Overview (Compact)"),
+				meteoSettingsPrefix: root.settingsPrefix
+			})
+//			preferredVisible: root.device.productId === ProductInfo.ProductId_MeteoSensor_Imt
+		}
+
+
+
+
+
+
 	}
 }

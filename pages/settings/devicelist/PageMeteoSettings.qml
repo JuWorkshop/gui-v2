@@ -32,6 +32,15 @@ Page {
 				dataItem.uid: meteoSettingsPrefix + "/ExternalTemperatureSensor"
 				optionModel: root.optionModel
 			}
+
+
+
+
+
+
+
+
+
 		}
 	}
 }
