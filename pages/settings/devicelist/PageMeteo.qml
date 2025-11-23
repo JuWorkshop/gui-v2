@@ -105,7 +105,23 @@ DevicePage {
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String1/WhPerWc"
 			//% "String1/WhPerWc"
-			text: "page_meteo_string1_wh_per_wc"
+			text: "String1 Wh/Wc"
+			preferredVisible: dataItem.valid
+			precision: 2
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String2/WhPerWc"
+			//% "String2/WhPerWc"
+			text: "String2 Wh/Wc"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String3/WhPerWc"
+			//% "String3/WhPerWc"
+			text: "String3 Wh/Wc"
 			preferredVisible: dataItem.valid
 			precision: 1
 		}
