@@ -62,6 +62,32 @@ DevicePage {
 			precision: 1
 		}
 
+
+		ListQuantityGroup {
+			text: "String 1:"
+			model: QuantityObjectModel {
+				QuantityObject { object: theoreticaltoday; VenusOS.Units_Watt }
+				QuantityObject { object: today; VenusOS.Units_Watt }
+				QuantityObject { object: efficiency; VenusOS.Units_Watt }
+			}
+
+			VeQuickItem {
+				id: theoreticaltoday
+				uid: root.bindPrefix + "/PV/String1/TheoreticalYieldToday"
+			}
+
+			VeQuickItem {
+				id: today
+				uid: root.bindPrefix + "/PV/String1/YieldToday"
+			}
+
+			VeQuickItem {
+				id: efficiency
+				uid: root.bindPrefix + "/PV/String1/DailyEfficiency"
+			}
+		}
+
+
 		ListItem {
 			id: sensorBattery
 
