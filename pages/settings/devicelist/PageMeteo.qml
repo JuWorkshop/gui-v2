@@ -85,7 +85,7 @@ DevicePage {
 		}
 
 		ListQuantity {
-			dataItem.uid: bindPrefix + "/TodaysYield"
+			dataItem.uid: bindPrefix + "/Energy/Daily"
 			//% "Today's yield"
 			text: qsTrId("page_meteo_daily_yield")
 			preferredVisible: dataItem.valid
