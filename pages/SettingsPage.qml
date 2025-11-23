@@ -97,9 +97,9 @@ SwipeViewPage {
 			}
 
 			SettingsListNavigation {
-					//% "Debug & Develop"
+					//% "PV Efficiency"
 					text: qsTrId("PV Efficiency (Pyranometer)")
-					//% "Profiling tools, debug statistics, app version..."
+					//% "Pyranometer_PV"
 					secondaryText: qsTrId("settings_profilingtools_debugstatistics_appversion")
 					pageSource: "/pages/settings/PyranometerPage.qml"
 					iconSource: "qrc:/images/icon_debug_32.png"
