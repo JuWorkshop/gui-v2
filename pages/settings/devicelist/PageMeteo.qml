@@ -71,6 +71,22 @@ DevicePage {
 		}
 
 		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String1/YieldToday"
+			//% "String 1/YieldToday"
+			text: "String 1 YieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String1/DailyEfficiency"
+			//% "String 1/DailyEfficiency"
+			text: "String 1 DailyEfficiency"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String2/TheoreticalYieldToday"
 			//% "String 2/TheoreticalYieldToday"
 			text: "String 2 TheoreticalYieldToday"
@@ -79,9 +95,41 @@ DevicePage {
 		}
 
 		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String2/YieldToday"
+			//% "String 2/YieldToday"
+			text: "String 2 YieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String2/DailyEfficiency"
+			//% "String 2/DailyEfficiency"
+			text: "String 2 DailyEfficiency"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String3/TheoreticalYieldToday"
 			//% "String 3/TheoreticalYieldToday"
 			text: "String 3 TheoreticalYieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String3/YieldToday"
+			//% "String 3/YieldToday"
+			text: "String 3 YieldToday"
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String3/DailyEfficiency"
+			//% "String 3/DailyEfficiency"
+			text: "String 3 DailyEfficiency"
 			preferredVisible: dataItem.valid
 			precision: 1
 		}
