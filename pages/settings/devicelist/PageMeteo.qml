@@ -85,11 +85,28 @@ DevicePage {
 		}
 
 		ListQuantity {
+			dataItem.uid: bindPrefix + "/TodaysYield"
+			//% "Today's yield"
+			text: qsTrId("page_meteo_daily_yield")
+			preferredVisible: dataItem.valid
+			unit: VenusOS.Units_Energy_KiloWattHour
+			precision: 1
+		}
+
+		ListQuantity {
 			dataItem.uid: bindPrefix + "/Energy/Daily"
 			//% "Today's yield"
 			text: qsTrId("page_meteo_daily_yield")
 			preferredVisible: dataItem.valid
 			unit: VenusOS.Units_Energy_KiloWattHour
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/PV/String1/WhPerWc"
+			//% "String1/WhPerWc"
+			text: qsTrId("page_meteo_daily_yield")
+			preferredVisible: dataItem.valid
 			precision: 1
 		}
 
