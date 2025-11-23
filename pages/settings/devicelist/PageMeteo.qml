@@ -74,9 +74,9 @@ DevicePage {
 		ListQuantityGroup {
 			text: "String 1:"
 			model: QuantityObjectModel {
-				QuantityObject { object: theoreticaltoday; unit: "Kwh" }
-				QuantityObject { object: today; unit: "Kwh" }
-				QuantityObject { object: efficiency; unit: "%" }
+				QuantityObject { object: theoreticaltoday; VenusOS.Units_Watt }
+				QuantityObject { object: today; VenusOS.Units_Watt }
+				QuantityObject { object: efficiency; VenusOS.Units_Watt }
 			}
 
 			VeQuickItem {
