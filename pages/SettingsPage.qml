@@ -96,9 +96,9 @@ SwipeViewPage {
 				showAccessLevel: VenusOS.User_AccessType_SuperUser
 			}
 
-			ListNavigation {
-					//% "PV Efficiency"
-					onClicked: Global.pageManager.pushPage("/pages/settings/PyranometerPage.qml", { title: text })
+			SettingsListNavigation {
+				//% "PV Efficiency"
+				pageSource: "/pages/settings/debug/PageDebug.qml"
 			}
 
 		}
