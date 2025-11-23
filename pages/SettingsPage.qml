@@ -98,7 +98,9 @@ SwipeViewPage {
 
 			SettingsListNavigation {
 				//% "PV Efficiency"
-				pageSource: "/pages/settings/debug/PageDebug.qml"
+				text: qsTrId("settings_pv_efficiency")
+				pageSource: "/pages/settings/PyranometerPage.qml"
+				showAccessLevel: VenusOS.User_AccessType_SuperUser
 			}
 
 		}
