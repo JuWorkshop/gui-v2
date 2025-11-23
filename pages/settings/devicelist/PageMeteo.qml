@@ -29,61 +29,6 @@ DevicePage {
 			precision: 1
 		}
 
-		ListTemperature {
-			//% "Cell temperature"
-			text: qsTrId("page_meteo_cell_temperature")
-			preferredVisible: dataItem.valid
-			dataItem.uid: bindPrefix + "/CellTemperature"
-			precision: 1
-		}
-
-		ListTemperature {
-			text: sensor2.dataItem.valid
-				//% "External temperature (1)"
-				? qsTrId("page_meteo_external_temperature_1")
-				//% "External temperature"
-				: qsTrId("page_meteo_external_temperature")
-			preferredVisible: dataItem.valid
-			dataItem.uid: bindPrefix + "/ExternalTemperature"
-			precision: 1
-		}
-
-		ListTemperature {
-			id: sensor2
-
-			dataItem.uid: bindPrefix + "/ExternalTemperature2"
-			//% "External temperature (2)"
-			text: qsTrId("page_meteo_external_temperature_2")
-			preferredVisible: dataItem.valid
-			precision: 1
-		}
-
-		ListQuantity {
-			dataItem.uid: bindPrefix + "/WindSpeed"
-			//% "Wind speed"
-			text: qsTrId("page_meteo_wind_speed")
-			preferredVisible: dataItem.valid
-			unit: VenusOS.Units_Speed_MetresPerSecond
-			precision: 1
-		}
-
-		ListQuantity {
-			dataItem.uid: bindPrefix + "/WindDirection"
-			//% "Wind direction"
-			text: qsTrId("page_meteo_wind_direction")
-			preferredVisible: dataItem.valid
-			unit: VenusOS.Units_CardinalDirection
-		}
-
-		ListQuantity {
-			dataItem.uid: bindPrefix + "/InstallationPower"
-			//% "Installation Power"
-			text: qsTrId("page_meteo_installation_power")
-//			preferredVisible: dataItem.valid
-			unit: VenusOS.Units_Watt
-			precision: 1
-		}
-
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/TodaysYield"
 			//% "Today's yield"
@@ -93,14 +38,14 @@ DevicePage {
 			precision: 1
 		}
 
-		ListQuantity {
-			dataItem.uid: bindPrefix + "/Energy/Daily"
-			//% "Today's yield"
-			text: qsTrId("page_meteo_daily_yield")
-			preferredVisible: dataItem.valid
-			unit: VenusOS.Units_Energy_KiloWattHour
-			precision: 1
-		}
+//		ListQuantity {
+//			dataItem.uid: bindPrefix + "/Energy/Daily"
+//			//% "Today's yield"
+//			text: qsTrId("page_meteo_daily_yield")
+//			preferredVisible: dataItem.valid
+//			unit: VenusOS.Units_Energy_KiloWattHour
+//			precision: 1
+//		}
 
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String1/WhPerWc"
@@ -129,9 +74,9 @@ DevicePage {
 		ListQuantityGroup {
 			text: "String 1:"
 			model: QuantityObjectModel {
-				QuantityObject { object: theoreticaltoday; unit: VenusOS.Units_Volt_DC }
-				QuantityObject { object: today; unit: VenusOS.Units_Amp }
-				QuantityObject { object: efficiency; unit: VenusOS.Units_Watt }
+				QuantityObject { object: theoreticaltoday; unit: "Kwh" }
+				QuantityObject { object: today; unit: "Kwh" }
+				QuantityObject { object: efficiency; "%" }
 			}
 
 			VeQuickItem {
@@ -204,19 +149,71 @@ DevicePage {
 		}
 
 
-		ListNavigation {
-			id: pyranometerMenu
-			text: qsTrId("PV Overview (Compact)")
-			onClicked: Global.pageManager.pushPage("/pages/settings/devicelist/PyranometerCompactPage.qml", {
-				title: qsTrId("PV Overview (Compact)"),
-				meteoSettingsPrefix: root.settingsPrefix
-			})
-//			preferredVisible: root.device.productId === ProductInfo.ProductId_MeteoSensor_Imt
+		ListTemperature {
+			//% "Cell temperature"
+			text: qsTrId("page_meteo_cell_temperature")
+			preferredVisible: dataItem.valid
+			dataItem.uid: bindPrefix + "/CellTemperature"
+			precision: 1
+		}
+
+		ListTemperature {
+			text: sensor2.dataItem.valid
+				//% "External temperature (1)"
+				? qsTrId("page_meteo_external_temperature_1")
+				//% "External temperature"
+				: qsTrId("page_meteo_external_temperature")
+			preferredVisible: dataItem.valid
+			dataItem.uid: bindPrefix + "/ExternalTemperature"
+			precision: 1
+		}
+
+		ListTemperature {
+			id: sensor2
+
+			dataItem.uid: bindPrefix + "/ExternalTemperature2"
+			//% "External temperature (2)"
+			text: qsTrId("page_meteo_external_temperature_2")
+			preferredVisible: dataItem.valid
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/WindSpeed"
+			//% "Wind speed"
+			text: qsTrId("page_meteo_wind_speed")
+			preferredVisible: dataItem.valid
+			unit: VenusOS.Units_Speed_MetresPerSecond
+			precision: 1
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/WindDirection"
+			//% "Wind direction"
+			text: qsTrId("page_meteo_wind_direction")
+			preferredVisible: dataItem.valid
+			unit: VenusOS.Units_CardinalDirection
+		}
+
+		ListQuantity {
+			dataItem.uid: bindPrefix + "/InstallationPower"
+			//% "Installation Power"
+			text: qsTrId("page_meteo_installation_power")
+//			preferredVisible: dataItem.valid
+			unit: VenusOS.Units_Watt
+			precision: 1
 		}
 
 
-
-
+//		ListNavigation {
+//			id: pyranometerMenu
+//			text: qsTrId("PV Overview (Compact)")
+//			onClicked: Global.pageManager.pushPage("/pages/settings/devicelist/PyranometerCompactPage.qml", {
+//				title: qsTrId("PV Overview (Compact)"),
+//				meteoSettingsPrefix: root.settingsPrefix
+//			})
+////			preferredVisible: root.device.productId === ProductInfo.ProductId_MeteoSensor_Imt
+//		}
 
 
 	}
