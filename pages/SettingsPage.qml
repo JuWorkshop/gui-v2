@@ -96,14 +96,9 @@ SwipeViewPage {
 				showAccessLevel: VenusOS.User_AccessType_SuperUser
 			}
 
-			SettingsListNavigation {
+			ListNavigation {
 					//% "PV Efficiency"
-					text: qsTrId("settings_pv_efficiency")
-					//% "Pyranometer_PV"
-					secondaryText: qsTrId("settings_pyranometer_pv")
-					pageSource: "/pages/settings/PyranometerPage.qml"
-					iconSource: "qrc:/images/icon_debug_32.png"
-					showAccessLevel: VenusOS.User_AccessType_SuperUser
+					onClicked: Global.pageManager.pushPage("/pages/settings/PyranometerPage.qml", { title: text })
 			}
 
 		}
