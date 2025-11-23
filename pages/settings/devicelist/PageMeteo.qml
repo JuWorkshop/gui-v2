@@ -41,25 +41,25 @@ DevicePage {
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String1/WhPerWc"
 			//% "String1/WhPerWc"
-			text: "String1 Wh/Wc"
+			text: "String 1 Wh/Wc"
 			preferredVisible: dataItem.valid
-			precision: 2
+			precision: 1
 		}
 
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String2/WhPerWc"
 			//% "String2/WhPerWc"
-			text: "String2 Wh/Wc"
+			text: "String 2 Wh/Wc"
 			preferredVisible: dataItem.valid
-			precision: 2
+			precision: 1
 		}
 
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String3/WhPerWc"
-			//% "String3/WhPerWc"
+			//% "String 3/WhPerWc"
 			text: "String3 Wh/Wc"
 			preferredVisible: dataItem.valid
-			precision: 2
+			precision: 1
 		}
 
 		ListItem {
@@ -67,7 +67,7 @@ DevicePage {
 
 			//% "Sensor battery"
 			text: qsTrId("page_meteo_battery_voltage")
-			preferredVisible: batteryVoltage.valid
+//			preferredVisible: batteryVoltage.valid
 
 			content.children: [
 				QuantityLabel {
