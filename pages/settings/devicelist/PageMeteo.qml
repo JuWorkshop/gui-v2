@@ -38,15 +38,6 @@ DevicePage {
 			precision: 1
 		}
 
-//		ListQuantity {
-//			dataItem.uid: bindPrefix + "/Energy/Daily"
-//			//% "Today's yield"
-//			text: qsTrId("page_meteo_daily_yield")
-//			preferredVisible: dataItem.valid
-//			unit: VenusOS.Units_Energy_KiloWattHour
-//			precision: 1
-//		}
-
 		ListQuantity {
 			dataItem.uid: bindPrefix + "/PV/String1/WhPerWc"
 			//% "String1/WhPerWc"
@@ -69,30 +60,6 @@ DevicePage {
 			text: "String3 Wh/Wc"
 			preferredVisible: dataItem.valid
 			precision: 2
-		}
-
-		ListQuantityGroup {
-			text: "String 1:"
-			model: QuantityObjectModel {
-				QuantityObject { object: theoreticaltoday; VenusOS.Units_Watt }
-				QuantityObject { object: today; VenusOS.Units_Watt }
-				QuantityObject { object: efficiency; VenusOS.Units_Watt }
-			}
-
-			VeQuickItem {
-				id: theoreticaltoday
-				uid: bindPrefix + "PV/String1/TheoreticalYieldToday"
-			}
-
-			VeQuickItem {
-				id: today
-				uid: bindPrefix + "PV/String1/YieldToday"
-			}
-
-			VeQuickItem {
-				id: efficiency
-				uid: bindPrefix + "PV/String1/DailyEfficiency"
-			}
 		}
 
 		ListItem {
