@@ -76,22 +76,22 @@ DevicePage {
 			model: QuantityObjectModel {
 				QuantityObject { object: theoreticaltoday; unit: "Kwh" }
 				QuantityObject { object: today; unit: "Kwh" }
-				QuantityObject { object: efficiency; "%" }
+				QuantityObject { object: efficiency; unit: "%" }
 			}
 
 			VeQuickItem {
 				id: theoreticaltoday
-				uid: bindPrefix + "PV/String1/TheoreticalYieldToday"
+				uid: bindPrefix + "/PV/String1/TheoreticalYieldToday"
 			}
 
 			VeQuickItem {
 				id: today
-				uid: bindPrefix + "PV/String1/YieldToday"
+				uid: bindPrefix + "/PV/String1/YieldToday"
 			}
 
 			VeQuickItem {
 				id: efficiency
-				uid: bindPrefix + "PV/String1/DailyEfficiency"
+				uid: bindPrefix + "/PV/String1/DailyEfficiency"
 			}
 		}
 
